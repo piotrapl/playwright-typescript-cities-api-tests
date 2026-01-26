@@ -1,20 +1,28 @@
+// tests/tests/api/municipalitiesByName.spec.ts
+// importujemy niezbędne moduły z Playwright Test
+// czyli: test i expect
+// plus municipalitiesByNameCases z pliku z danymi testowymi
+
 import { test, expect } from "@playwright/test";
 import { municipalitiesByNameCases } from "../data/municipalitiesByName.cases";
 
+// typ dla response API
 type ApiResponse = {
   success?: boolean;
   data?: unknown;
   [k: string]: unknown;
 };
 
+// funkcje asercji dla kontraktu API
 function assertApiContract(body: ApiResponse) {
-  // Assertion 1: success === true
+  // Asercja 1: success === true
   expect(body).toHaveProperty("success", true);
 
-  // Assertion 2: data exists and is non-empty
+  // Asercja 2: pole data istnieje i nie jest puste
   expect(body).toHaveProperty("data");
   const data = body.data;
 
+// W pętli sprawdzamy różne możliwe typy danych w polu data
   if (Array.isArray(data)) {
     expect(data.length).toBeGreaterThan(0);
   } else if (data && typeof data === "object") {
@@ -26,6 +34,8 @@ function assertApiContract(body: ApiResponse) {
     expect(String(data).trim().length).toBeGreaterThan(0);
   }
 }
+
+// w pętli definiujemy testy dla każdego przypadku z municipalitiesByNameCases
 
 test.describe("GET /api/v1/municipalities/name/{name}", () => {
   for (const tc of municipalitiesByNameCases) {
