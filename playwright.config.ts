@@ -19,7 +19,8 @@
       ["list"],
       ["html", { open: "never", outputFolder: "playwright-report" }]
     ],
-
+    // sekcja globalnych ustawień dla testów
+    // extraHTTPHeaders - nagłówki HTTP dodawane do każdego żądania
     use: {
       baseURL: "https://local-gov-units.polandapi.com",
       ignoreHTTPSErrors: true,
