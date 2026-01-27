@@ -2,7 +2,7 @@
 
 Projekt prezentuje lekki, ale profesjonalny projekt do automatycznych testów API oparty o Playwright + TypeScript.
 
-english abstract:
+# English abstract:
 _Projekt prezentuje lekki, a jednocześnie profesjonalny projekt do automatycznych testów API, oparty na Playwright + TypeScript._
 ## Tech stack
 
