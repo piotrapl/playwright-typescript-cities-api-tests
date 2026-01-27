@@ -80,3 +80,13 @@ playwright-report/index.html
 Można go otworzyć komendą:
 
 npm run test:report
+
+## Dlaczego TypeScript, a nie JavaScript?
+
+- Mniej błędów – typy wychwytują problemy już na etapie pisania kodu.
+
+- Lepsze wsparcie IDE – podpowiedzi, refaktoryzacja i czytelniejszy kod testów.
+
+- Czytelne kontrakty API – typy jasno opisują dane request/response.
+
+- Naturalny wybór dla Playwrighta – pełne wsparcie i typowanie „out of the box”.
