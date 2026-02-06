@@ -4,15 +4,18 @@ name: CI - Playwright API Tests
 #   to oznacze, że kiedy GitHub Actions uruchamia ten workflow,
 #   zadanie (job:) będzie uruchamiane na maszynie z Linuxem
 # steps:
-# kroki w ramach tego zadania, rodzaje:
+# kroki w ramach tego zadania, ich rodzaje to:
 #   - name: <nazwa kroku> - opisowy tytuł kroku, który będzie widoczny w logach
 #   - run: <polecenie> - uruchamia polecenie w terminalu maszyny, na której działa workflow
 #   - uses: <nazwa akcji> - używa gotowej akcji (action) z GitHub Marketplace, która wykonuje określone zadanie, 
 #         np. checkout kodu, setup Node.js, załądowanie artefaktów itp.
 #   - if: <warunek> - warunek wykonania danego kroku
 #   W ramach 1 kroku można uruchamiać polecenia (run), jak też używać gotowych akcji (uses),
-pojedynczym poleceniem lub używać gotowej akcji (action) z GitHub Marketplace.
-# 
+# on: - mówi co warunkuje uruchomienie workflow ma być uruchamiany, np. na push, pull request, wg harmonogramu itp.
+#   tutaj: workflow będzie uruchamiany 
+#   1. na push do dowolnej gałęzi (branches: ["**"]) 
+#   2. na pull request, czyli gdy ktoś tworzy pull request do tego repozytorium
+oraz na pull request.
 on:
   push:
     branches: ["**"]
