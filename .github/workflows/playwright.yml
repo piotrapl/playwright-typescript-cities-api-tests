@@ -1,4 +1,4 @@
-name: CI - Playwright/Typescript API Tests
+name: CI - Playwright API Tests
 
 # runs-on: ubuntu-latest
 #   to oznacze, że kiedy GitHub Actions uruchamia ten workflow,
